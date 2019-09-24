@@ -6,6 +6,7 @@ This repository is aimed for following:
 
  - Summary and collection of TensorFlow-Keras code.
  - Coding experiment of TensorFlow-Keras.
+ - For my study.
 
 ## environment
 
