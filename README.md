@@ -11,10 +11,10 @@ This repository is aimed for following:
 ## environment
 
  - Python ver : 3.6.3
- - Numpy ver : 1.16.2
- - Scipy ver : 1.2.1
- - Pandas ver : 0.24.2
- - scikit-learn ver : 0.20.3
- - matplotlib ver : 3.0.3
- - TensorFlow ver : 1.13.1
+ - Numpy ver : 1.18.1
+ - Scipy ver : 1.4.1
+ - Pandas ver : 0.25.3
+ - scikit-learn ver : 0.22.1
+ - matplotlib ver : 3.1.2
+ - TensorFlow ver : 2.1.0
  - TensorFlow-Keras ver : 2.2.4-tf
