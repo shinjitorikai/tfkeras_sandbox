@@ -1,15 +1,16 @@
 from __future__ import print_function
+import tensorflow as tf
 
-import keras
-from keras.models import Sequential
-from keras.layers import Dense,Activation
+#import keras
+#from keras.models import Sequential
+#from keras.layers import Dense,Activation
 
 import numpy as  np
 from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 
 batch_size = 32
-epochs = 1000
+epochs = 5000
 
 #def func(x): # 1次
 #  a = 0.2 # ポイント：データが0<y<1に収まるように比率を調整
@@ -51,18 +52,22 @@ y = func(X)
 X_train,X_test,y_train,y_test = train_test_split(X,y,train_size=0.8) # トレーニング用データ80%で分割
 
 # model difinition
-model = Sequential()
-#model.add(Dense(3,input_shape=(1,)))
+#model = Sequential()
+##model.add(Dense(3,input_shape=(1,)))
+##model.add(Activation('sigmoid'))
+##model.add(Activation('relu'))
+#model.add(Dense(6,input_shape=(1,)))
 #model.add(Activation('sigmoid'))
-#model.add(Activation('relu'))
-model.add(Dense(6,input_shape=(1,)))
-model.add(Activation('sigmoid'))
-model.add(Dense(1))
+#model.add(Dense(1))
+model = tf.keras.models.Sequential([
+  tf.keras.layers.Flatten(input_shape=(1,)),
+  tf.keras.layers.Dense(3,activation='sigmoid'),
+  tf.keras.layers.Dense(1)
+])
 model.summary()
 
-model.compile(loss='mean_squared_error',
-             optimizer=keras.optimizers.RMSprop(),
-#              optimizer=keras.optimizers.Adam(),
+model.compile(loss='mean_squared_error',#tf.keras.losses.mean_squared_error(),
+             optimizer='RMSProp',#tf.keras.optimizers.RMSprop(),
              metrics=['accuracy'])
 
 history = model.fit(X_train,y_train,
@@ -77,8 +82,8 @@ test_accuracy = score[1]
 print('Test loss : ', test_loss)
 print('Test accuracy : ', test_accuracy)
 
-plt.plot(history.history['acc'])
-plt.plot(history.history['val_acc'])
+plt.plot(history.history['accuracy'])
+plt.plot(history.history['val_accuracy'])
 plt.grid(True)
 plt.title('accuracy')
 plt.xlabel('epoch')
