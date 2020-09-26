@@ -110,3 +110,4 @@ model/NumberDetect/saved_model/saved_model.pb
 model/NumberDetect/test1.jpg
 model/NumberDetect/test2.jpg
 model/NumberDetect/test3.jpg
+notebook/tensorboard/logs
