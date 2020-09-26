@@ -111,3 +111,4 @@ model/NumberDetect/test1.jpg
 model/NumberDetect/test2.jpg
 model/NumberDetect/test3.jpg
 notebook/tensorboard/logs
+keras/utils/plot_model.png
