@@ -112,3 +112,5 @@ model/NumberDetect/test2.jpg
 model/NumberDetect/test3.jpg
 notebook/tensorboard/logs
 keras/utils/plot_model.png
+keras/basicflow/checkpoint
+keras/basicflow/logs
